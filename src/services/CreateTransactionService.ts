@@ -20,7 +20,7 @@ class CreateTransactionService {
       //check balance if type is 'outcome' and you have balance available
       const { total } = this.transactionsRepository.getBalance();
       if (type === 'outcome' && total < value) {
-        throw Error('No funds availabe for this transaction');
+        throw Error('No funds available for this transaction');
       }
 
       const transaction = this.transactionsRepository.create({ title, value, type });
